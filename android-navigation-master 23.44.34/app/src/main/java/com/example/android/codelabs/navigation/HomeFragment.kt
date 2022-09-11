@@ -43,13 +43,6 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        //TODO STEP 5 - Set an OnClickListener, using Navigation.createNavigateOnClickListener()
-        val button = view.findViewById<Button>(R.id.navigate_destination_button)
-        button?.setOnClickListener {
-            findNavController().navigate(R.id.flow_step_one_dest, null)
-        }
-        //TODO END STEP 5
-
         //TODO STEP 6 - Set NavOptions
         val options = navOptions {
             anim {
