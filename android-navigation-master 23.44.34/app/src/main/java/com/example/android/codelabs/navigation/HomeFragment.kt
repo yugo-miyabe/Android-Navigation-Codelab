@@ -44,7 +44,7 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        //TODO STEP 6 - Set NavOptions
+        // アニメーションを定義
         val options = navOptions {
             anim {
                 enter = R.anim.slide_in_right
@@ -53,16 +53,15 @@ class HomeFragment : Fragment() {
                 popExit = R.anim.slide_out_right
             }
         }
+        // アニメーションを追加
         view.findViewById<Button>(R.id.navigate_destination_button)?.setOnClickListener {
             findNavController().navigate(R.id.flow_step_one_dest, null, options)
         }
-        //TODO END STEP 6
 
-        //TODO STEP 7.2 - Update the OnClickListener to navigate using an action
+        // Navigationに定義されているアニメーション追加
         view.findViewById<Button>(R.id.navigate_action_button)?.setOnClickListener(
             Navigation.createNavigateOnClickListener(R.id.next_action, null)
         )
-        //TODO END STEP 7.2
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
